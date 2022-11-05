@@ -19,6 +19,12 @@ class Products {
 
     return { id: result.insertId, ...product };
   }
+
+  async findAll() {
+    const [result] = await this.connection
+      .execute<ResultSetHeader>('SELECT * FROM `Trybesmith`.Products');
+    return result;
+  }
 }
 
 export default Products;

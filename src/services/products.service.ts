@@ -13,6 +13,12 @@ class ProductService {
     const addProducts = await this.model.create(product);
     return addProducts;
   }
+
+  public async findAll() {
+    const listarProducts = await this.model.findAll();
+    console.log(listarProducts);
+    return { status: 200, result: listarProducts };
+  }
 }
 
 export default ProductService;
