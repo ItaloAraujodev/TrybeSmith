@@ -9,7 +9,6 @@ class UsersController {
   }
 
   create = async (req: Request, res: Response) => {
-    console.log(req.body);
     const token = await this.usersService.create(req.body);
     return res.status(201).json({ token });
   }
